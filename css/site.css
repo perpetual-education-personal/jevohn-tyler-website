@@ -125,6 +125,10 @@ body {
 	grid-template-columns: repeat(2, 1fr);
 }
 
+svg path:hover {
+	fill: var(--black);
+}
+
 @media (max-width: 799px) {
 	main {
 		max-width: 600px;
