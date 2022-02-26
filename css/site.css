@@ -15,14 +15,21 @@
 /* SETTINGS */
 html {
 	--black: #111;
-	--white: #efefef;
+	--white: #e9e0d0;
 
 	--paper: var(--white);
 	--ink: var(--black);
 	--highlight: blue;
+
+	--pink: #df867d;
+	--orange: #f26d45;
+	--yellow: #fab04d;
+	--green: #3d8f66;
+
+	--ghost: rgba(0,0,0,.1);
 }
 
-@media (prefers-color-scheme) {
+@media (prefers-color-scheme: dark) {
 	html {
 		--paper: var(--black);
 		--ink: var(--white);
@@ -36,6 +43,16 @@ html {
 	box-sizing: border-box;
 }
 
+picture {
+	display: block;
+}
+
+img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
 inner-column {
 	display: block;
 	max-width: 900px;
@@ -44,6 +61,14 @@ inner-column {
 	padding: 10px;
 }
 
+a {
+	color: inherit;
+}
+
+svg {
+	display: block;
+	width: 100%;
+}
 
 /* TYPOGRAPHY */
 .hi {
@@ -70,11 +95,21 @@ inner-column {
 
 /* YEAH */
 body {
+	background-color: var(--paper);
+	color: var(--ink);
 	padding: 4vh 0 8vh;
+}
+
+.welcome, .contact, .projects, inner-column {
+	border: 1px solid var(--ghost);
 }
 
 .welcome h1 {
 	padding: 2vh 0;
+}
+
+.welcome svg {
+	margin: 5vh 0;
 }
 
 .contact {
@@ -83,4 +118,42 @@ body {
 
 .contact p {
 	margin-top: 1rem;
+}
+
+.contact dl {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+}
+
+@media (max-width: 799px) {
+	main {
+		max-width: 600px;
+	}
+}
+
+@media (min-width: 800px) {
+	.m {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 40px;
+	}
+
+	.welcome {
+		grid-column: 1 / 2;
+	}
+
+	.contact {
+		grid-column: 1 / 2;
+	}
+
+	.projects {
+		grid-column: 2 / 3;
+		grid-row: 1 / 2;
+	}
+
+	.projects .book-list {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 20px;
+	}
 }
