@@ -93,6 +93,12 @@ svg {
 	font-weight: 700;
 }
 
+.warning {
+	margin-top: 10px;
+	color: red;
+	font-family: monospace;
+}
+
 /* YEAH */
 body {
 	background-color: var(--paper);
@@ -109,7 +115,7 @@ body {
 }
 
 .welcome svg {
-	margin: 5vh 0;
+	margin: 0;
 }
 
 .contact {
@@ -125,10 +131,43 @@ body {
 	grid-template-columns: repeat(2, 1fr);
 }
 
-svg path:hover {
-	fill: var(--black);
+.flag {
+	background-color: var(--yellow);
+	display: inline-block;
+	font-size: 15px;
+	padding: .3em .5em;
+	
+	font-family: sans-serif;
+	min-width: 150px;
+	color: var(--paper);
+	font-weight: 700;
+	margin-bottom: 20px;
+	margin-top: 5px;
 }
 
+.contact, .info {
+	padding: 10px;
+}
+
+.goals-list {
+	display: grid;
+	gap: 40px;
+	margin-top: 50px;
+}
+
+.goals-list li {
+	display: grid;
+	gap: 10px;
+}
+
+.goals-list + h2 {
+	margin-top: 100px;
+}
+
+/*svg path:hover {
+	fill: var(--black);
+}
+*/
 @media (max-width: 799px) {
 	main {
 		max-width: 600px;
